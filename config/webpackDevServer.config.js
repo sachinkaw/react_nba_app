@@ -11,12 +11,15 @@ const host = process.env.HOST || '0.0.0.0';
 
 module.exports = function(proxy, allowedHost) {
   return {
+    
     disableHostCheck:
       !proxy || process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true',
     compress: true,
     clientLogLevel: 'none',
+    
     contentBase: paths.appPublic,
     watchContentBase: true,
+    
     hot: true,
     publicPath: config.output.publicPath,
     quiet: true,
